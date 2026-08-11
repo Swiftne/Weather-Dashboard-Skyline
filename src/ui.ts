@@ -319,9 +319,3 @@ export function showSuggestions(results: GeocodingResult[], onSelect: SelectCall
 export function hideSuggestions(): void {
   getEl('suggestions').classList.add('hidden');
 }
-
-const weatherGradiants: Record<string, string> ={
-  clear: "bg-linear-to-b from-sky-400 t0-blue-600",
-  rainy: "bg-linear-to-b from-slate-700 t0-slate-900",
-  sunset: "bg-linear-to-b from-slate-900 via-purple-800 to-pink-500"
-}
