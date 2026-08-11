@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>weather-dashboard-skyline</title>
+  </head>
+  <body>
+    <div id="app">
+      <main>
+        <div id="sky-hero" class=" bg-linear-to-b from-slate-700 to-blue-600 p-6">
+          <div class="mb-6">
+            <input id="search-input" class="w-140 rounded-2xl border border-white/10 bg-slate-950/70 p-3 text-white placeholder:text-slate-500" placeholder="Search city..." />
+            <div id="suggestions" class="hidden"></div>
+          </div>
+
+          <section id="skeleton" class="rounded-3xl bg-slate-900/70 p-10 text-center text-white/70">Loading…</section>
+
+          <section id="current-content" class="hidden flex-col gap-4 text-white">
+            <div class="space-y-2">
+              <p id="city-name" class="text-3xl font-semibold"></p>
+              <p id="condition-label" class="text-sm text-slate-300"></p>
+            </div>
+            <div class="flex flex-wrap items-center gap-6">
+              <p id="temp-now" class="text-7xl font-display font-semibold"></p>
+              <div class="space-y-1 text-sm text-slate-300">
+                <p id="temp-high"></p>
+                <p id="temp-low"></p>
+                <p id="feels-like"></p>
+                <p id="updated-label" class="text-xs text-slate-500"></p>
+              </div>
+            </div>
+          </section>
+
+          <section id="stat-strip" class="mt-8 grid gap-3 md:grid-cols-4"></section>
+          <section id="hourly-strip" class="mt-6 flex gap-3 overflow-x-auto"></section>
+          <section id="daily-list" class="mt-6 grid gap-3"></section>
+          <section id="detail-cards" class="mt-6 grid gap-4 lg:grid-cols-2"></section>
+
+          <div class="mt-6 h-72 rounded-3xl bg-slate-950/70 p-4">
+            <canvas id="temp-chart" class="h-full w-full"></canvas>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
